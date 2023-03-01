@@ -5,26 +5,40 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class webOrderTask2 {
+    /**
+         * Task
+         * Navigate to http://secure.smartbearsoftware.com/samples/testcomplete11/WebOrders/login.aspx
+         * Login
+         * Get title and verify it is correct
+         * logout
+         * close the browser
+         */
+
     public static void main(String[] args) {
+
+        // tell your project where the web-driver is located.
+        // for Mac user please do not use .exe with chromedriver
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
 
-             //create an instance of WebDriver
+             // create an instance of WebDriver
         WebDriver driver=new ChromeDriver();
-//        navigate to the website
+
+        // navigate to the website
         driver.get("http://secure.smartbearsoftware.com/samples/testcomplete11/WebOrders/login.aspx");
 
-//        maximize the website
+        // maximize the website
         driver.manage().window().maximize();
 
-//   username
+        // username
         driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
 
-//        password
+        // password
         driver.findElement(By.name("ctl00$MainContent$password")).sendKeys("test");
-//        click on login
+
+        // click on login
         driver.findElement(By.className("button")).click();
 
-//        verify that the title is "Web Orders"
+        // verify that the title is "Web Orders"
         String title = driver.getTitle();
 
         if(title.equalsIgnoreCase("Web Orders")){
@@ -34,10 +48,10 @@ public class webOrderTask2 {
             System.out.println("the title is incorrect");
         }
 
-//        logout
+            // logout
         driver.findElement(By.linkText("Logout")).click();
 
-//        close the browser
+            //  close the browser
         driver.quit();
 
     }
