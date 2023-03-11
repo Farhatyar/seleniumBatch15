@@ -1,9 +1,7 @@
-package Class1;
+package class01;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.sql.Driver;
 
 public class LaunchBrowser {
     public static void main(String[] args) throws InterruptedException {
